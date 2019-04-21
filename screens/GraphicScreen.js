@@ -36,7 +36,7 @@ class GraphicScreen extends Component{
 
         const data = {
             labels: ['Доход','Расход','Прибыль'],
-            datasets:[{data:[sumAmountIncome,sumAmountOutcome,sumProfit,]}]
+            datasets:[{data:[sumAmountIncome,sumAmountOutcome,sumProfit]}]
         };
 
 
