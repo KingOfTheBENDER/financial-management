@@ -10,7 +10,7 @@ class AddOperationScreen extends Component{
 
 
     onButtonPress=()=>{
-        if(this.props.dateTime!==undefined) {
+        if(this.props.dateTime!==undefined && !isNaN(this.props.amountIncome)&&!isNaN(this.props.amountOutcome) &&!isNaN(this.props.profit) ) {
             const {dateTime, amountIncome, amountOutcome, profit} = this.props;
             this.props.operationCreate({dateTime, amountIncome, amountOutcome, profit});
             this.props.navigation.navigate('operation');
@@ -29,19 +29,19 @@ class AddOperationScreen extends Component{
                 <Input
                     label="Приход денег"
                     value={this.props.amountIncome}
-                    keyboardType='numeric'
+                    keyboardType='numbers-and-punctuation'
                     onChangeText={value=>this.props.operationUpdate({prop:'amountIncome',value})}
                 />
                 <Input
                     label="Расход денег"
                     value={this.props.amountOutcome}
-                    keyboardType='numeric'
+                    keyboardType='numbers-and-punctuation'
                     onChangeText={value=>this.props.operationUpdate({prop:'amountOutcome',value})}
                 />
                 <Input
                     label="Прибыль"
                     value={this.props.profit}
-                    keyboardType='numeric'
+                    keyboardType='numbers-and-punctuation'
                     onChangeText={value=>this.props.operationUpdate({prop:'profit',value})}
                 />
                 <View style={{marginTop: 10}}>

@@ -66,13 +66,15 @@ class TableScreen extends Component{
 
         return (
             <ScrollView style={styles.container}>
-                <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-                    <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text}/>
-                    <Cols  data={this.state.tableData}
-                           heightArr={heightArr}
-                           textStyle={styles.text}
-                    />
-                </Table>
+                <View style={{marginTop: 30,padding:10}}>
+                    <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
+                        <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text}/>
+                        <Cols  data={this.state.tableData}
+                               heightArr={heightArr}
+                               textStyle={styles.text}
+                        />
+                    </Table>
+                </View>
                 <View style={{marginTop: 10}}>
                     <Text style={styles.text}>Сумма прибыли:{sumProfit}</Text>
                     <Text style={styles.text}>Сумма прихода:{sumAmountIncome}</Text>
@@ -86,7 +88,7 @@ class TableScreen extends Component{
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 10, paddingTop: 30, backgroundColor: '#fff' },
+    container: { flex: 1,  backgroundColor: '#fff' },
     head: { height: 40, backgroundColor: '#f1f8ff' },
     text: { margin: 3 }
 });
