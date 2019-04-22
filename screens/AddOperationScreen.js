@@ -30,19 +30,36 @@ class AddOperationScreen extends Component{
                     label="Приход денег"
                     value={this.props.amountIncome}
                     keyboardType='numbers-and-punctuation'
-                    onChangeText={value=>this.props.operationUpdate({prop:'amountIncome',value})}
+                    onChangeText={value=>{
+                        if(value===''){
+                            this.props.operationUpdate({prop:'amountIncome',value:0});
+                        }else{
+                            this.props.operationUpdate({prop:'amountIncome',value})}}
+                        }
                 />
                 <Input
                     label="Расход денег"
                     value={this.props.amountOutcome}
                     keyboardType='numbers-and-punctuation'
-                    onChangeText={value=>this.props.operationUpdate({prop:'amountOutcome',value})}
+                    onChangeText={value=>{
+                        if(value===''){
+                            this.props.operationUpdate({prop:'amountOutcome',value:0});
+                        }else {
+                            this.props.operationUpdate({prop: 'amountOutcome', value})
+                        }
+                    }}
                 />
                 <Input
                     label="Прибыль"
                     value={this.props.profit}
                     keyboardType='numbers-and-punctuation'
-                    onChangeText={value=>this.props.operationUpdate({prop:'profit',value})}
+                    onChangeText={value=>{
+                        if(value===''){
+                            this.props.operationUpdate({prop:'profit',value:0});
+                        }else {
+                            this.props.operationUpdate({prop: 'profit', value})
+                        }
+                    }}
                 />
                 <View style={{marginTop: 10}}>
                     <Button
